@@ -1,0 +1,16 @@
+footer {
+     position:absolute; 
+     bottom:0; 
+     width:100%; 
+    }
+
+.page-footer{
+    background-color: #008ce0;
+}
+
+.col{
+    text-align: center;
+}
+.white-text{
+    font: 24px Acme, sans-serif;
+}
