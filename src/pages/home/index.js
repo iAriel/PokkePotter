@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import './style.css';
 
-// import Imagem from '../../assents/images/Grifinoria'
+import api from '../../api';
 
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 
 export default function Home() {
+
+    const [houses, setHouses] = useState([]);
+    useEffect(() => { 
+        async function getHouses(){
+            const response = await api.get('/houses');
+            setHouses(response.data);
+        }
+
+        getHouses();
+     }, []); 
+
     return (
         <>
             <Nav/>
@@ -16,21 +28,21 @@ export default function Home() {
             </div>
             <div className="choice">
 
-                <a href="#" className= "grifi">
+                <Link to={`/characters/${houses[0]}`} className= "grifi">
                     <img src="
-                    https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072953571   " alt=""/>
-                </a>
+                    https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072953571   " alt={houses[0]}/>
+                </Link>
 
-                <a href="#" className= "sons">
-                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072953899" alt=""/>
-                </a>
+                <Link to={`/characters/${houses[1]}`} className= "sons">
+                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072953899" alt={houses[1]}/>
+                </Link>
 
-                <a href="#" className= "corv">
-                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072954238" alt=""/>
-                </a>
-                <a href="#" className= "lufa">
-                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072954574?dimensions=600x315&crop_position=c" alt=""/>
-                </a>
+                <Link to={`/characters/${houses[2]}`} className= "corv">
+                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072954238" alt={houses[2]}/>
+                </Link>
+                <Link to={`/characters/${houses[3]}`} className= "lufa">
+                    <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072954574?dimensions=600x315&crop_position=c" alt={houses[3]}/>
+                </Link>
             </div>    
             <Footer/>           
         </>
