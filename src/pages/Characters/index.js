@@ -41,17 +41,17 @@ export default function Characters(){
                 <img src="https://i.pinimg.com/originals/7a/37/c7/7a37c7b60c016089a64ec5effc1a2512.png" alt="Escudo de Hogwarts"/>
             </div>
             
-            <div class="container">
-                <div class="row" >
+            <div className="container">
+                <div className="row" >
                     {wizards.map(wizard => (
-                                    <div class="col s12 m3">
-                                        <div class="card">
-                                            <div class="card-image">
+                                    <div className="col s12 m3" key={wizard.name}>
+                                        <div className="card">
+                                            <div className="card-image">
                                                 <Link to={`/wizards/${encodeURIComponent(wizard.name)}`}> 
-                                                    <img className="image"src={wizard.image}/>  
+                                                    <img className="image" src={wizard.image} alt={wizard.name} />  
                                                 </Link>
                                                 
-                                                    <span class="card-title">
+                                                    <span className="card-title">
                                                         <Link to={`/wizards/${encodeURIComponent(wizard.name)}`}> {wizard.name} </Link>
                                                     </span>
                                             </div>
