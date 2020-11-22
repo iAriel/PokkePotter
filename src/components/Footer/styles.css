@@ -3,13 +3,14 @@ footer {
     bottom: 0;
 }
 
-.page-footer{
-    background-color: #008ce0;
-}
-
 .col{
     text-align: center;
 }
 .white-text{
     font: 24px Acme, sans-serif;
+}
+
+.footer-copyright div {
+    color: #fff;
+    text-align: center;
 }
