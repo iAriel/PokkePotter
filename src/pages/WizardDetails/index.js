@@ -5,9 +5,6 @@ import './style.css';
 
 import api from '../../api';
 
-import Nav from '../../components/nav';
-import Footer from '../../components/footer';
-
 export default function WizardDetails() {
     const { name } = useParams();
 
@@ -18,7 +15,7 @@ export default function WizardDetails() {
         async function getWizard() {
             const { data: {
                 wizard, pokemons
-            }} = await api.get(`/wizards/${decodeURIComponent(name)}`);
+            } } = await api.get(`/wizards/${decodeURIComponent(name)}`);
             setWizard(wizard);
             setPokemons(pokemons);
         }
@@ -28,70 +25,63 @@ export default function WizardDetails() {
 
     if (!pokemons.length) {
         return (
-            <div>
-                <Nav />
+            <main>
                 <div className="loading">
-                    <div class="preloader-wrapper big active">
-                        <div class="spinner-layer spinner-blue-only">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
+                    <div className="preloader-wrapper big active">
+                        <div className="spinner-layer spinner-blue-only">
+                            <div className="circle-clipper left">
+                                <div className="circle"></div>
+                            </div><div className="gap-patch">
+                                <div className="circle"></div>
+                            </div><div className="circle-clipper right">
+                                <div className="circle"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <Footer />
-            </div>
+            </main>
         );
     }
 
     return (
-        <div>
-            <Nav />
+        <main>
             <div className="information">
-                <img src={wizard.image} alt={wizard.name} srcset=""/>
+                <img src={wizard.image} alt={wizard.name} srcset="" />
                 <h1>{wizard.name}</h1>
             </div>
-            
+
             <div className="poke">
                 <ul>
                     {pokemons.map((pokemon) => (
                         <li key={pokemon.id}>
-                            
-                            
+
+
                         </li>
                     ))}
                 </ul>
             </div>
-            
+
             <div className="container">
                 <div className="row" >
                     {pokemons.map((pokemon) => (
-                        <div class="col s12 m3">
-                            <div class="card" >
-                                <div class="card-image">
-                                    <img src={pokemon.sprites.other['official-artwork'].front_default} />
-                                    <span class="card-title">{pokemon.name}</span>
+                        <div className="col s12 m3">
+                            <div className="card" >
+                                <div className="card-image">
+                                    <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
+                                    <span className="card-title">{pokemon.name}</span>
                                 </div>
-                                <div class="card-content">
+                                <div className="card-content">
                                     <ul>
                                         <li><p>Pokedex ID: {pokemon.id}</p></li>
                                         <li><p>Experiência: {pokemon.base_experience} Pontos</p></li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     ))}
-                    
-
                 </div>
-            </div>                
-            <Footer />
-        </div>
+            </div>
+        </main>
     );
 }
