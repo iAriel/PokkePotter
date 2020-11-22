@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import './style.css';
 
-import api from '../../api';
+import api from '../../services/api';
 
 export default function WizardDetails() {
     const { name } = useParams();

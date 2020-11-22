@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './style.css';
 
-import api from '../../api';
+import api from '../../services/api';
 
 export default function Home() {
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import './styles.css';
-import api from '../../api';
+import api from '../../services/api';
 
 export default function Characters() {
     const { house } = useParams();
