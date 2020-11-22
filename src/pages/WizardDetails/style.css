@@ -1,0 +1,23 @@
+.information{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 30px;
+}
+
+.information, img{
+    border-radius: 5PX;
+}
+
+.loading{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 25%;
+}
+
+.card-title{
+    color:black;
+}

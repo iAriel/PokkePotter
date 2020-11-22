@@ -7,18 +7,6 @@ import api from '../../api';
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
 
-// Caso você queira usar estas imagens, é assim que importa:
-/*
-import corvinalHouse from '../../assets/images/Corvinal.jpg';
-import grifinoriaHouse from '../../assets/images/Grifinoria.jpg';
-import lufalufaHouse from '../../assets/images/LufaLufa.jpg';
-import sonserinaHouse from '../../assets/images/Sonserina.jpg';
-*/
-
-// Uso: 
-/* <img className="corv" src={covirnalHouse} alt="corvinal"/> */
-
-
 export default function Home() {
 
     const [houses, setHouses] = useState([]);

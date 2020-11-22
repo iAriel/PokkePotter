@@ -30,7 +30,20 @@ export default function WizardDetails() {
         return (
             <div>
                 <Nav />
-                <h1>Carregando...</h1>
+                <div className="loading">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <Footer />
             </div>
         );
@@ -39,15 +52,45 @@ export default function WizardDetails() {
     return (
         <div>
             <Nav />
-            <h1>{wizard.name}</h1>
-            <ul>
-                {pokemons.map((pokemon) => (
-                    <li key={pokemon.id}>
-                        <span>Nome do Pokemon: {pokemon.name}</span>
-                        <p>Nº Pokedex: {pokemon.id}</p>
-                    </li>
-                ))}
-            </ul>
+            <div className="information">
+                <img src={wizard.image} alt={wizard.name} srcset=""/>
+                <h1>{wizard.name}</h1>
+            </div>
+            
+            <div className="poke">
+                <ul>
+                    {pokemons.map((pokemon) => (
+                        <li key={pokemon.id}>
+                            
+                            
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            
+            <div className="container">
+                <div className="row" >
+                    {pokemons.map((pokemon) => (
+                        <div class="col s12 m3">
+                            <div class="card" >
+                                <div class="card-image">
+                                    <img src={pokemon.sprites.other['official-artwork'].front_default} />
+                                    <span class="card-title">{pokemon.name}</span>
+                                </div>
+                                <div class="card-content">
+                                    <ul>
+                                        <li><p>Pokedex ID: {pokemon.id}</p></li>
+                                        <li><p>Experiência: {pokemon.base_experience} Pontos</p></li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    
+
+                </div>
+            </div>                
             <Footer />
         </div>
     );

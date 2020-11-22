@@ -45,7 +45,7 @@ export default function Characters(){
                 <div className="row" >
                     {wizards.map(wizard => (
                                     <div className="col s12 m3" key={wizard.name}>
-                                        <div className="card">
+                                        <div className="card" id="carta">
                                             <div className="card-image">
                                                 <Link to={`/wizards/${encodeURIComponent(wizard.name)}`}> 
                                                     <img className="image" src={wizard.image} alt={wizard.name} />  
