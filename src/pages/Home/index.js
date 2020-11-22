@@ -4,9 +4,6 @@ import './style.css';
 
 import api from '../../api';
 
-import Nav from '../../components/nav'
-import Footer from '../../components/footer'
-
 export default function Home() {
 
     const [houses, setHouses] = useState([]);
@@ -20,8 +17,7 @@ export default function Home() {
      }, []); 
 
     return (
-        <>
-            <Nav/>
+        <main>
             <div className="head">
                 <img src="https://i.pinimg.com/originals/7a/37/c7/7a37c7b60c016089a64ec5effc1a2512.png" alt="Escudo de Hogwarts"/>
                 <h1>Escolha Uma Casa</h1>
@@ -43,8 +39,7 @@ export default function Home() {
                 <Link to={`/characters/${houses[3]}`} className= "lufa">
                     <img src="https://img.r7.com/images/casas-de-hogwarts-significados-por-tras-dos-lares-da-escola-bruxa-24082020072954574?dimensions=600x315&crop_position=c" alt={houses[3]}/>
                 </Link>
-            </div>    
-            <Footer/>           
-        </>
+            </div>           
+        </main>
     );
 }
