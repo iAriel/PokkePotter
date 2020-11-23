@@ -18,6 +18,33 @@
     margin: 25%;
 }
 
+#pokeCard{
+    height: 475px;
+}
+
+#pokeImage{
+    border: 2px solid red;
+
+    -webkit-border-radius: 2px;
+    -webkit-border-bottom-left-radius: 52px;
+    -moz-border-radius: 4px;
+    -moz-border-radius-bottomleft: 52px;
+    border-radius: 4px;
+    border-bottom-left-radius: 52px;
+}
+
+#pokeName{
+    color: red;
+}
+
+.pokeType{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pokeType p{
+    padding-left: 10px;
+}
 .card-title{
     color:black;
 }

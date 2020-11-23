@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 import './style.css';
 
 import api from '../../services/api';
@@ -18,7 +19,10 @@ export default function WizardDetails() {
             } } = await api.get(`/wizards/${decodeURIComponent(name)}`);
             setWizard(wizard);
             setPokemons(pokemons);
+            console.log(pokemons);
         }
+
+        
 
         getWizard();
     }, [name]);
@@ -65,17 +69,25 @@ export default function WizardDetails() {
                 <div className="row" >
                     {pokemons.map((pokemon) => (
                         <div className="col s12 m3">
-                            <div className="card" >
-                                <div className="card-image">
+                            <div className="card" id="pokeCard">
+                                <div className="card-image" id="pokeImage">
                                     <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
-                                    <span className="card-title">{pokemon.name}</span>
+                                    <span className="card-title" id="pokeName">{pokemon.name}</span>
                                 </div>
                                 <div className="card-content">
                                     <ul>
                                         <li><p>Pokedex ID: {pokemon.id}</p></li>
                                         <li><p>Experiência: {pokemon.base_experience} Pontos</p></li>
+                                        <li className="pokeType">
+                                            <p>
+                                                {pokemon.types.map((type) => (
+                                                    <span>Tipo: {type.type.name}</span>
+                                            
+                                                ))}
+                                            </p>
+                                        </li>
                                     </ul>
-
+                                    
                                 </div>
                             </div>
                         </div>
