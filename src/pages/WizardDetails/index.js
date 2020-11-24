@@ -36,7 +36,6 @@ export default function WizardDetails() {
             } } = await api.get(`/wizards/${decodeURIComponent(name)}`);
             setWizard(wizard);
             setPokemons(pokemons);
-            console.log(pokemons);
         }
 
         getWizard();
@@ -108,7 +107,7 @@ export default function WizardDetails() {
             <div className="container">
                 <div className="row" >
                     {pokemons.map((pokemon) => (
-                        <div className="col s12 m3">
+                        <div className="col s12 m3" key={pokemon.id}>
                             <div className="card" id="pokeCard">
                                 <div className="card-image" id="pokeImage">
                                     <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
