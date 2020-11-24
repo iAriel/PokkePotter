@@ -6,8 +6,7 @@
     margin-top: 30px;
 }
 
-.information, img{
-    border-radius: 5PX;
+.information{
 }
 
 .loading{
@@ -19,28 +18,85 @@
 }
 
 #pokeCard{
-    height: 475px;
+    height: 530px;
+    width: 310px;
+    background-color: #dc0a2d;
 }
 
 #pokeImage{
-    border: 2px solid red;
+    border: 3px solid #dedede;
+    background: white;
 
-    -webkit-border-radius: 2px;
-    -webkit-border-bottom-left-radius: 52px;
-    -moz-border-radius: 4px;
-    -moz-border-radius-bottomleft: 52px;
-    border-radius: 4px;
-    border-bottom-left-radius: 52px;
+    height: 300px;
+    width: 275px;
+
+    margin-left: 25px;
+
+    
+    
 }
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 0;
+
+    border: 3px solid #dedede;
+    background: #dedede;
+
+    width: 275px;
+    height: 30px;
+
+    color: red;
+    
+    -webkit-border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 50px;
+    -moz-border-radius-bottomright: 20px;
+    -moz-border-radius-bottomleft: 50px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 50px;
+}
+
+.details p{
+    color: black;
+}
+
 
 #pokeName{
     color: red;
 }
 
-.pokeType{
+#pokeType{
     border: 1px solid black;
     border-radius: 5px;
+    background:  white;
+
+    font: 15px Acme, sans-serif;
+
+    
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+    
+    
+
+    width: 250px;
+    height: 150px;
+
 }
+
+#pokeType, p{
+    text-align: left;
+    margin-top: 20px;
+}
+
 
 .pokeType p{
     padding-left: 10px;

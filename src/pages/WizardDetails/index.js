@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Bar } from 'react-chartjs-2';
+import {IoIosRadioButtonOn, IoMdMenu} from 'react-icons/io';
 
 import './style.css';
 
@@ -110,14 +111,19 @@ export default function WizardDetails() {
                         <div className="col s12 m3" key={pokemon.id}>
                             <div className="card" id="pokeCard">
                                 <div className="card-image" id="pokeImage">
-                                    <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
+                                    <img className="imagePoke" src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
                                     <span className="card-title" id="pokeName">{pokemon.name}</span>
                                 </div>
-                                <div className="card-content">
+                                <div className="details">
+                                    <IoIosRadioButtonOn/>
+                                    <p><IoMdMenu/></p>
+                                </div>
+                                <div className="card-content" id="pokeType">
                                     <ul>
                                         <li><p>Pokedex ID: {pokemon.id}</p></li>
                                         <li><p>Experiência: {pokemon.base_experience} Pontos</p></li>
-                                        <li className="pokeType">
+                                        
+                                        <li>
                                             <p>
                                                 {pokemon.types.map((type) => (
                                                     <span>Tipo: {type.type.name}</span>
