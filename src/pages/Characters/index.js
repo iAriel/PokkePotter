@@ -18,18 +18,27 @@ export default function Characters() {
         getWizards();
     }, [house]);
 
-    // const styles = (cor) =>{
-    //     if(cor === "Gryffindor"){
-    //         return "#97100a";
-    //     }else if (cor === "Slytherin"){
-    //         return "#0b6242";
-    //     }else if(cor === "Ravenclaw"){
-    //         return "#43547f";
-    //     }else if (cor ==="Hufflepuff"){
-    //         return "#ca9923";
-    //     }
+    if (!wizards.length) {
+        return (
+            <main>
+                <div className="loading">
+                    <div className="preloader-wrapper big active">
+                        <div className="spinner-layer spinner-blue-only">
+                            <div className="circle-clipper left">
+                                <div className="circle"></div>
+                            </div><div className="gap-patch">
+                                <div className="circle"></div>
+                            </div><div className="circle-clipper right">
+                                <div className="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        );
+    }
 
-    // };
+
 
     return (
         <main>
